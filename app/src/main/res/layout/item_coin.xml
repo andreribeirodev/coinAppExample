@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/black">
+
+    <View
+        android:id="@+id/viewDividerItems"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="@color/white" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/Widget.Material3.MaterialDivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/imageViewCoinLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/logo_crypto"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewCoinName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageViewCoinLogo"
+            app:layout_constraintTop_toTopOf="@id/imageViewCoinLogo"
+            tools:text="Nome da Moeda" />
+
+        <ImageView
+            android:id="@+id/imageViewIconFavoriteCoin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:contentDescription="@string/indication_favorite_coin"
+            android:src="@drawable/ic_coin_favorite"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/textViewCoinName"
+            app:layout_constraintStart_toEndOf="@id/textViewCoinName"
+            app:layout_constraintTop_toTopOf="@id/textViewCoinName" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageViewCoinLogo"
+            app:layout_constraintEnd_toEndOf="@+id/textViewCoinName"
+            app:layout_constraintStart_toStartOf="@id/textViewCoinName"
+            app:layout_constraintTop_toBottomOf="@id/textViewCoinName"
+            tools:text="BTC" />
+
+        <TextView
+            android:id="@+id/textViewCoinPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewCoinLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageViewCoinLogo"
+            tools:text="$31.010,20" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

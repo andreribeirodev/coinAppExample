@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineCenterHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <View
+            android:id="@+id/viewDetails"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/color_green"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineCenterHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewIconBackPressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_screen_back"
+            app:layout_constraintStart_toStartOf="@id/viewDetails"
+            app:layout_constraintTop_toTopOf="@id/viewDetails" />
+
+        <TextView
+            android:id="@+id/textViewBtnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/back_pressed_btn"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/imageViewIconBackPressed"
+            app:layout_constraintStart_toEndOf="@id/imageViewIconBackPressed"
+            app:layout_constraintTop_toTopOf="@id/imageViewIconBackPressed" />
+
+        <TextView
+            android:id="@+id/textViewCoinAbreviation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BTC"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/textViewBtnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/viewDetails"
+            app:layout_constraintTop_toTopOf="@id/textViewBtnBack" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
