@@ -3,4 +3,5 @@
     <string name="logo_crypto">Logo da crypto moeda</string>
     <string name="indication_favorite_coin">Icone que indica uma moeda favorita</string>
     <string name="back_pressed_btn">Voltar</string>
+    <string name="btn_favorite">ADICIONAR AO FAVORITO</string>
 </resources>

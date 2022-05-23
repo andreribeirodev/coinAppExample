@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,6 +18,16 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.50" />
 
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageViewIconBackPressed"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="12dp"-->
+        <!--            android:layout_marginTop="12dp"-->
+        <!--            android:src="@drawable/ic_screen_back"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/viewDetails"-->
+        <!--            app:layout_constraintTop_toTopOf="@id/viewDetails" />-->
+
         <View
             android:id="@+id/viewDetails"
             android:layout_width="0dp"
@@ -24,30 +35,24 @@
             android:background="@color/color_green"
             app:layout_constraintBottom_toBottomOf="@id/guidelineCenterHorizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageViewIconBackPressed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/ic_screen_back"
-            app:layout_constraintStart_toStartOf="@id/viewDetails"
-            app:layout_constraintTop_toTopOf="@id/viewDetails" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/textViewBtnBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
             android:text="@string/back_pressed_btn"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/imageViewIconBackPressed"
-            app:layout_constraintStart_toEndOf="@id/imageViewIconBackPressed"
-            app:layout_constraintTop_toTopOf="@id/imageViewIconBackPressed" />
+            app:drawableStartCompat="@drawable/ic_screen_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewCoinAbreviation"
@@ -61,6 +66,142 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/viewDetails"
             app:layout_constraintTop_toTopOf="@id/textViewBtnBack" />
+
+        <ImageView
+            android:id="@+id/imageViewLogoCoin"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCoinAbreviation" />
+
+        <TextView
+            android:id="@+id/coinValueDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:text="$31.000,00"
+            app:layout_constraintStart_toStartOf="@id/imageViewLogoCoin"
+            app:layout_constraintEnd_toEndOf="@id/imageViewLogoCoin"
+            app:layout_constraintTop_toBottomOf="@id/imageViewLogoCoin"
+            android:layout_marginTop="32dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFavorite"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:padding="12dp"
+            android:text="@string/btn_favorite"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/guidelineCenterHorizontal"
+            app:layout_constraintEnd_toEndOf="@+id/coinValueDetails"
+            app:layout_constraintStart_toStartOf="@+id/coinValueDetails"
+            app:layout_constraintTop_toBottomOf="@id/coinValueDetails"
+            app:strokeColor="@color/white" />
+
+        <TextView
+            android:id="@+id/valueNegociation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Volumes negociados"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDetails" />
+
+        <TextView
+            android:id="@+id/textViewUltimaHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="Ultima hora"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewPriceCoin"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/valueNegociation" />
+
+        <TextView
+            android:id="@+id/textViewPriceCoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="$31.000,00"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewUltimaHora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewUltimaHora"
+            app:layout_constraintTop_toTopOf="@id/textViewUltimaHora" />
+
+        <TextView
+            android:id="@+id/textViewUltimoMes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Ultimo mês"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/textViewPriceCoinUltimoMes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/textViewUltimaHora"
+            app:layout_constraintTop_toBottomOf="@id/textViewUltimaHora" />
+
+        <TextView
+            android:id="@+id/textViewPriceCoinUltimoMes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="$31.000,00"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/textViewUltimoMes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewUltimoMes"
+            app:layout_constraintTop_toTopOf="@id/textViewUltimoMes" />
+
+        <TextView
+            android:id="@+id/textViewUltimoAno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Ultimo ano"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="24dp"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewUltimoMes" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$31.000,00"
+            android:layout_marginHorizontal="24dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewUltimoAno"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewUltimoAno"
+            app:layout_constraintTop_toTopOf="@+id/textViewUltimoAno" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
